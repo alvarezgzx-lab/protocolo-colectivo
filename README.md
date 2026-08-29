@@ -1,4 +1,4 @@
-# Mis Skills de Claude
+# HR Claude Skills
 
 Repositorio personal donde se guardan todas las skills de Claude que voy creando. Cada skill vive en su propia carpeta, con su propio `SKILL.md` y su propio `README.md` explicando qué hace y cómo se usa.
 
