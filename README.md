@@ -19,6 +19,7 @@ Parte del ecosistema de proyectos de **Casa CoLectiva**.
   - [Diseño de Experiencias de Aprendizaje](#diseño-de-experiencias-de-aprendizaje)
   - [Investigación](#investigación)
   - [Analítica de Datos](#analítica-de-datos)
+  - [Meta / Modo de Trabajo](#meta--modo-de-trabajo)
 - [Convenciones de este repositorio](#convenciones-de-este-repositorio)
 - [Cómo instalar una skill](#cómo-instalar-una-skill)
 - [Cómo se agregan nuevas skills](#cómo-se-agregan-nuevas-skills)
@@ -57,8 +58,14 @@ protocolo-colectivo/
 │   └── analista-actividades-curso/
 │       ├── README.md
 │       └── SKILL.md
-└── analitica-datos/
-    └── README.md                          ← categoría reservada, aún sin skills
+├── analitica-datos/
+│   └── README.md                          ← categoría reservada, aún sin skills
+└── meta/
+    ├── README.md
+    └── reflexion-estructurada/
+        ├── README.md
+        ├── SKILL.md
+        └── ...
 ```
 
 ## Skills disponibles
@@ -93,6 +100,14 @@ Procesan material de origen para producir salidas estructuradas: transcripción 
 
 _Categoría reservada — ver [`analitica-datos/README.md`](./analitica-datos/README.md). Aún no tiene skills publicadas._
 
+### Meta / Modo de Trabajo
+
+Skills que no producen contenido de un dominio específico, sino que definen cómo Claude debe trabajar — capas de proceso que se aplican antes o alrededor de las demás skills, sin importar el dominio.
+
+| Skill | Descripción |
+|---|---|
+| [`reflexion-estructurada`](./meta/reflexion-estructurada/) | Modo de trabajo reflexivo para tareas sustantivas: detecta si una tarea amerita pausar a alinear expectativas, cruza la solicitud por 2-4 lentes expertas internas (fusionado con el repertorio de `council`), expone huecos y supuestos, y confirma un esquema de fases antes de ejecutar. |
+
 ## Convenciones de este repositorio
 
 - **Una carpeta por skill**, dentro de la carpeta de su dominio funcional.
@@ -107,7 +122,7 @@ Cada skill es independiente y se instala copiando su carpeta completa al directo
 
 ## Cómo se agregan nuevas skills
 
-1. Nueva carpeta dentro del dominio funcional que corresponda (o un nuevo dominio, si ninguno de los cuatro aplica).
+1. Nueva carpeta dentro del dominio funcional que corresponda (o un nuevo dominio, si ninguno de los existentes aplica).
 2. `SKILL.md` + `README.md` propios, siguiendo el patrón de las skills existentes.
 3. Fila nueva en la tabla del dominio correspondiente (`<dominio>/README.md`) y en este README general.
 4. Si la skill maneja datos personales o sensibles, exclusión explícita vía `.gitignore` + plantilla de ejemplo, igual que `generador-cv-harvard`.
