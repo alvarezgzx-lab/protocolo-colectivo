@@ -1,0 +1,13 @@
+# Datos personales — nunca deben subirse a este repo público
+gestion-talento/generador-cv-harvard/cv-maestro.md
+
+# Archivos de estado generados al usar las skills (son artefactos de sesión del usuario, no de la skill)
+workforce-plan-status.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
