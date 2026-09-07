@@ -1,0 +1,26 @@
+{
+  "_readme": "Este archivo se traduce directamente al system prompt y a los guardrails del middleware (ej. middleware/src/claude.js). Cada checkpointId debe existir en el glosario de IDs. Cada nextBlockId candidato debe terminar existiendo como fila en el guion instruccional (Fase 3). Ningún checkpoint puede quedar sin 'casoSinHistorialPrevio'.",
+
+  "checkpoints": [
+    {
+      "checkpointId": "",
+      "queSeEvaluaAntesDeEsePunto": {
+        "actividadesPrevias": [],
+        "senalesXapi": []
+      },
+      "rutasPosibles": [
+        {
+          "nextBlockId": "",
+          "criterioDeSeleccion": "Lenguaje claro, no pseudocódigo: 'si el alumno falló 2+ veces el ejercicio X, ir aquí'."
+        },
+        {
+          "nextBlockId": "",
+          "criterioDeSeleccion": ""
+        }
+      ],
+      "casoSinHistorialPrevio": "Qué ruta toma un alumno que llega a este checkpoint por primera vez, sin statements previos que evaluar."
+    }
+  ],
+
+  "notaParaDesarrollo": "Con este archivo completo, el system prompt del middleware debe: (1) recibir la lista de nextBlockId válidos para el checkpointId actual, no solo el historial crudo, (2) recibir el criterio en lenguaje claro como parte del contexto, (3) tener instrucción explícita de nunca devolver un nextBlockId fuera de esa lista, (4) manejar el caso sin historial devolviendo el nextBlockId de casoSinHistorialPrevio sin necesidad de llamar a Claude para ese caso trivial."
+}
