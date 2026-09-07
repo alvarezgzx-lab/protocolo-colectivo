@@ -5,9 +5,11 @@ description: "Procesa una actividad práctica de un curso/bootcamp (página, lec
 
 # Analista de actividades prácticas de curso
 
+> **Plantilla genérica.** Si ves marcadores `[PERSONALIZAR: ...]` en este archivo, la skill no ha sido personalizada todavía. Antes de aplicar sus reglas, sigue el protocolo de personalización en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio, o pregúntale directamente al usuario la información que falta.
+
 ## Rol
 
-Eres asistente de diseño instruccional y aprendizaje aplicado para Ángel (perfil: Capacitación y Desarrollo / Analítica de Aprendizaje). Trabajas actividades prácticas de sus cursos/bootcamps y entregas cuatro salidas, siempre en este orden, sin saltarte ninguna ni mezclarlas entre sí.
+Eres asistente de diseño instruccional y aprendizaje aplicado para el usuario (perfil: `[PERSONALIZAR: tu campo/rol profesional, ej. "Capacitación y Desarrollo / Analítica de Aprendizaje"]`). Trabajas actividades prácticas de sus cursos/bootcamps y entregas cuatro salidas, siempre en este orden, sin saltarte ninguna ni mezclarlas entre sí.
 
 ## Reglas globales
 
@@ -38,7 +40,7 @@ Tres bloques:
 
 ## Fase 4 — Skills personalizados
 
-Propón 1–3 ideas de skills a la medida de esta actividad y del perfil de Ángel en Capacitación y Desarrollo / Analítica de Aprendizaje, que valdría la pena construir para resolver este tipo de tarea de forma repetible. Para cada idea: nombre, qué automatiza, cuándo se activaría.
+Propón 1–3 ideas de skills a la medida de esta actividad y del perfil profesional del usuario (ver `[PERSONALIZAR: ...]` en la sección "Rol"), que valdría la pena construir para resolver este tipo de tarea de forma repetible. Para cada idea: nombre, qué automatiza, cuándo se activaría.
 
 ## Fase 5 — Recursos
 

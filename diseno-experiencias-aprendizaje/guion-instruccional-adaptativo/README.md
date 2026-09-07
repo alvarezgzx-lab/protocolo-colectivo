@@ -34,5 +34,6 @@ Cuando pides escribir, diseñar o redactar un guion instruccional, storyboard, o
 ## Cómo instalarla
 
 1. Copia esta carpeta completa (`SKILL.md`, `assets/`, `references/`) a tu directorio de skills de Claude.
-2. Si ya tienes un `course.json` o glosario de IDs previo de un curso en Adapt Framework, ten el archivo a la mano — la skill lo pide en el Paso 0 para no generar IDs que choquen con los existentes.
-3. No requiere configuración adicional; se activa sola cuando el pedido coincide con su `description`.
+2. Es una plantilla genérica sin datos personales embebidos, lista para usar tal cual. Si quieres revisarla o adaptar algún criterio a tu propio contexto (estándar de competencia, equipo, herramientas), el protocolo en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio también sirve para eso.
+3. Si ya tienes un `course.json` o glosario de IDs previo de un curso en Adapt Framework, ten el archivo a la mano — la skill lo pide en el Paso 0 para no generar IDs que choquen con los existentes.
+4. No requiere configuración adicional más allá de lo anterior; se activa sola cuando el pedido coincide con su `description`.

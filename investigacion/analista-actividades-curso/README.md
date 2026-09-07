@@ -23,5 +23,6 @@ Cuando pides analizar o preparar una actividad, tarea o proyecto de un curso o b
 ## Cómo instalarla
 
 1. Copia esta carpeta completa (`SKILL.md`) a tu directorio de skills de Claude.
-2. No requiere archivos de referencia adicionales ni configuración; se activa sola cuando el pedido coincide con su `description`.
-3. Si la actividad está en un PDF, ten instalada la skill `pdf`/`pdf-reading` correspondiente para la extracción de contenido antes de la transcripción.
+2. **Personaliza `SKILL.md`** — tiene un marcador `[PERSONALIZAR: ...]` en la sección "Rol" (tu campo/perfil profesional). Sigue el protocolo de personalización en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio, o resuélvelo tú mismo directamente en el archivo.
+3. No requiere archivos de referencia adicionales; se activa sola cuando el pedido coincide con su `description`.
+4. Si la actividad está en un PDF, ten instalada la skill `pdf`/`pdf-reading` correspondiente para la extracción de contenido antes de la transcripción.

@@ -1,24 +1,26 @@
 ---
-name: Generador CV Harvard
-description: Genera un CV de una pagina adaptado a una vacante, con el CV maestro de Angel Alvarez y estandar Harvard OCS. Usar cuando pegue una descripcion de vacante y pida un CV o resume.
+name: generador-cv-harvard
+description: Genera un CV de una página adaptado a una vacante, usando el CV maestro del usuario y el estándar Harvard OCS. Usar cuando el usuario pegue una descripción de vacante y pida un CV o resumen.
 ---
 
 # Generador de CV — Estándar Harvard OCS + Diseño Visual Moderno
 
+> **Plantilla genérica.** Si ves marcadores `[PERSONALIZAR: ...]` en este archivo, la skill no ha sido personalizada todavía. Antes de aplicar sus reglas, sigue el protocolo de personalización en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio, o pregúntale directamente al usuario la información que falta.
+
 ## Cuándo se activa este skill
 
-Cuando el usuario pegue la descripción de una vacante y pida un CV, resume, o adaptación de su currículum a esa vacante específica.
+Cuando el usuario pegue la descripción de una vacante y pida un CV, resumen, o adaptación de su currículum a esa vacante específica.
 
 ## Fuentes que este skill usa
 
-- `cv-maestro.md` — CV completo de Ángel Álvarez (fuente única de verdad; nunca inventar datos fuera de este archivo).
+- `cv-maestro.md` — CV completo del usuario (fuente única de verdad; nunca inventar datos fuera de este archivo). No incluido en la plantilla por privacidad — ver `cv-maestro.example.md` para la estructura esperada.
 - `diseno-visual.md` — sistema de diseño (tipografía, paleta, CSS de impresión) para la versión HTML de una página.
 
 Carga estos dos archivos al activarse el skill.
 
 ## Advertencia sobre fotografía
 
-Este CV sigue el estándar Harvard OCS **sin fotografía** — es la convención correcta para maximizar compatibilidad ATS y evitar sesgos de evaluación. El enlace al portafolio (incluido en el CV maestro) es el sustituto funcional: ahí vive la imagen completa de Ángel.
+Este CV sigue el estándar Harvard OCS **sin fotografía** — es la convención correcta para maximizar compatibilidad ATS y evitar sesgos de evaluación. Si el usuario tiene un portafolio en línea, su enlace (incluido en el CV maestro) puede funcionar como sustituto: ahí vive su imagen completa.
 
 ## Principios Harvard OCS — reglas duras
 
@@ -33,7 +35,7 @@ Este CV sigue el estándar Harvard OCS **sin fotografía** — es la convención
 
 ## Proceso de trabajo
 
-1. Identifica el track de la vacante: docencia, coordinación/innovación educativa, o capacitación y desarrollo corporativo (L&D). Si es ambiguo, pregunta antes de generar.
+1. Identifica el track de la vacante dentro del campo profesional del usuario — `[PERSONALIZAR: lista los 2-4 tracks típicos de tu campo, ej. "docencia, coordinación/innovación educativa, o capacitación y desarrollo corporativo (L&D)" para educación; o "backend, frontend, o liderazgo técnico" para ingeniería de software]`. Si es ambiguo, pregunta antes de generar.
 2. Extrae 5-8 requisitos/palabras clave de la vacante.
 3. Cruza esos requisitos contra `cv-maestro.md` — identifica qué logros, experiencia y habilidades son relevantes; ignora el resto.
 4. Decide el orden de secciones según qué le da más peso a esta vacante (el orden por defecto en `cv-maestro.md` es Perfil → Formación → Logros → Experiencia → Habilidades → Idiomas, pero puede reordenarse).

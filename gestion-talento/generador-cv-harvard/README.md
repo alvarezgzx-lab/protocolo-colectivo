@@ -6,7 +6,7 @@ Skill de Claude que genera un **CV de una página adaptado a una vacante especí
 
 A partir de la descripción de una vacante pegada en el chat, la skill:
 
-1. Identifica el track profesional de la vacante (docencia, coordinación/innovación educativa, o capacitación y desarrollo corporativo) y pregunta si es ambiguo.
+1. Identifica el track profesional de la vacante dentro de tu campo (los tracks se personalizan a tu profesión — ver `SKILL.md`) y pregunta si es ambiguo.
 2. Extrae 5-8 requisitos/palabras clave de la vacante.
 3. Cruza esos requisitos contra un **CV maestro** (fuente única de verdad, nunca inventa datos) para decidir qué logros, experiencia y habilidades son relevantes.
 4. Reescribe el perfil profesional, filtra logros y viñetas de experiencia, y ajusta el orden de secciones según lo que más pese para esa vacante.
@@ -31,6 +31,7 @@ Se activa cuando pegas la descripción de una vacante y pides un CV, un resumé,
 ## Cómo instalarla
 
 1. Copia esta carpeta completa a tu directorio de skills de Claude.
-2. Duplica `cv-maestro.example.md` como `cv-maestro.md` en la misma carpeta y reemplaza cada sección con tus datos reales — esta skill lo carga como fuente de verdad al activarse.
-3. Ajusta `diseno-visual.md` si quieres otra tipografía o paleta de color (por defecto: Fraunces + Inter + IBM Plex Mono, paleta editorial crema/terracota/marino).
-4. **Importante:** no elimines la entrada de `cv-maestro.md` en el `.gitignore` de la raíz del repo si vas a hacer fork o clonar este proyecto — evita subir tus datos personales por accidente.
+2. **Personaliza `SKILL.md`** — tiene un marcador `[PERSONALIZAR: ...]` en el paso 1 del proceso de trabajo (los tracks profesionales de tu vacante). Sigue el protocolo de personalización en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio, o resuélvelo tú mismo directamente en el archivo.
+3. Duplica `cv-maestro.example.md` como `cv-maestro.md` en la misma carpeta y reemplaza cada sección con tus datos reales — esta skill lo carga como fuente de verdad al activarse.
+4. Ajusta `diseno-visual.md` si quieres otra tipografía o paleta de color (por defecto: Fraunces + Inter + IBM Plex Mono, paleta editorial crema/terracota/marino), y completa el marcador del enlace a tu portafolio si tienes uno.
+5. **Importante:** no elimines la entrada de `cv-maestro.md` en el `.gitignore` de la raíz del repo si vas a hacer fork o clonar este proyecto — evita subir tus datos personales por accidente.

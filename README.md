@@ -9,6 +9,8 @@ Repositorio de herramientas construidas sobre modelos de lenguaje (Claude) que c
 
 Parte del ecosistema de proyectos de **Casa CoLectiva**.
 
+> **Plantillas genéricas.** Ninguna skill de este repositorio contiene nombres, historiales laborales ni preferencias de trabajo de una persona en particular. Donde la skill original necesitaba ese contexto, queda un marcador `[PERSONALIZAR: ...]` — ver [`INSTALACION.md`](./INSTALACION.md) para el protocolo (y el prompt listo para copiar) que lo resuelve por ti.
+
 ---
 
 ## Índice
@@ -21,7 +23,7 @@ Parte del ecosistema de proyectos de **Casa CoLectiva**.
   - [Analítica de Datos](#analítica-de-datos)
   - [Meta / Modo de Trabajo](#meta--modo-de-trabajo)
 - [Convenciones de este repositorio](#convenciones-de-este-repositorio)
-- [Cómo instalar una skill](#cómo-instalar-una-skill)
+- [Cómo instalar y personalizar una skill](#cómo-instalar-y-personalizar-una-skill)
 - [Cómo se agregan nuevas skills](#cómo-se-agregan-nuevas-skills)
 - [Licencia](#licencia)
 
@@ -32,6 +34,7 @@ Las skills se agrupan por dominio funcional. Cada dominio es una carpeta en la r
 ```
 protocolo-colectivo/
 ├── README.md                              ← este archivo (índice general)
+├── INSTALACION.md                         ← protocolo de personalización (prompt incluido)
 ├── LICENSE.md
 ├── gestion-talento/
 │   ├── README.md
@@ -114,16 +117,19 @@ Skills que no producen contenido de un dominio específico, sino que definen có
 - **`SKILL.md` es la fuente de verdad para Claude** (frontmatter `name` + `description`, seguido de las instrucciones). No se edita su formato para "verse mejor" en GitHub — es un artefacto funcional, no solo documentación.
 - **`README.md` es para humanos**: qué hace la skill, cómo se activa, qué archivos la componen, cómo instalarla.
 - **Datos personales o sensibles nunca se commitean.** Si una skill requiere un archivo con datos reales del usuario (ver `generador-cv-harvard/cv-maestro.md`), ese archivo va al `.gitignore` y se documenta con un `*.example.md` de plantilla.
+- **Las skills son plantillas genéricas, no instrucciones de una persona en particular.** Cualquier nombre, preferencia de trabajo o dato de contexto específico que la skill original necesitaba se reemplaza por un marcador `[PERSONALIZAR: ...]` — nunca se hardcodea un nombre propio, empleador, o perfil profesional fijo dentro de la lógica de la skill.
 - **Sin carpetas de evaluación/datos de curso** (`evals/`, casos de estudio con PDFs de terceros, etc.) salvo que se indique explícitamente — este repo distribuye las skills, no el material de los cursos donde se diseñaron.
 
-## Cómo instalar una skill
+## Cómo instalar y personalizar una skill
 
 Cada skill es independiente y se instala copiando su carpeta completa al directorio de skills de tu instalación de Claude. Los detalles específicos (archivos de configuración, dependencias entre skills, comandos rápidos) están en el `README.md` de cada una — consulta las tablas de arriba.
+
+Antes de usarla en serio, resuelve sus marcadores `[PERSONALIZAR: ...]` (si tiene) siguiendo [`INSTALACION.md`](./INSTALACION.md) — incluye un prompt listo para copiar que le pide a Claude leer el `SKILL.md`, hacerte una entrevista corta, y reescribirlo con tu contexto real.
 
 ## Cómo se agregan nuevas skills
 
 1. Nueva carpeta dentro del dominio funcional que corresponda (o un nuevo dominio, si ninguno de los existentes aplica).
-2. `SKILL.md` + `README.md` propios, siguiendo el patrón de las skills existentes.
+2. `SKILL.md` + `README.md` propios, siguiendo el patrón de las skills existentes — genéricos, con `[PERSONALIZAR: ...]` donde la skill original dependía de contexto de una persona específica.
 3. Fila nueva en la tabla del dominio correspondiente (`<dominio>/README.md`) y en este README general.
 4. Si la skill maneja datos personales o sensibles, exclusión explícita vía `.gitignore` + plantilla de ejemplo, igual que `generador-cv-harvard`.
 

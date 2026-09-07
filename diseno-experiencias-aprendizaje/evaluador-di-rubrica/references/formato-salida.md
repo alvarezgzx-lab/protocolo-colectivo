@@ -1,6 +1,6 @@
 # Formato de salida: JSON + informe narrativo
 
-Genera SIEMPRE ambas cosas, en este orden: primero el bloque JSON consolidado (para que Ángel pueda copiarlo a otro sistema si lo necesita), después el resumen narrativo en español.
+Genera SIEMPRE ambas cosas, en este orden: primero el bloque JSON consolidado (para que el usuario pueda copiarlo a otro sistema si lo necesita), después el resumen narrativo en español.
 
 ## 1. Esquema JSON consolidado
 
@@ -57,7 +57,7 @@ Genera SIEMPRE ambas cosas, en este orden: primero el bloque JSON consolidado (p
 }
 ```
 
-**Cálculo del puntaje global:** `100 × [Σ (puntaje_i/4 × peso_i)] / [Σ peso_i de los criterios evaluados]`. Ver SKILL.md (Paso 3) para por qué el denominador no es simplemente 1 — los pesos originales del JSON de Ángel suman 1.02, no 1.00.
+**Cálculo del puntaje global:** `100 × [Σ (puntaje_i/4 × peso_i)] / [Σ peso_i de los criterios evaluados]`. Ver SKILL.md (Paso 3) para por qué el denominador no es simplemente 1 — los pesos originales de la rúbrica suman 1.02, no 1.00.
 
 **Categoría según el puntaje global:**
 | Rango | Categoría |
@@ -67,7 +67,7 @@ Genera SIEMPRE ambas cosas, en este orden: primero el bloque JSON consolidado (p
 | 75-89 | Bueno |
 | ≥ 90 | Excelente |
 
-No inventes puntajes: si no hay evidencia suficiente para juzgar un criterio, ponlo en 0-1 y dilo explícitamente en la nota, en vez de asumir un valor intermedio "para no ser injusto". Es preferible que el informe le señale a Ángel qué información falta a que le dé un puntaje optimista sin fundamento.
+No inventes puntajes: si no hay evidencia suficiente para juzgar un criterio, ponlo en 0-1 y dilo explícitamente en la nota, en vez de asumir un valor intermedio "para no ser injusto". Es preferible que el informe le señale al usuario qué información falta a que le dé un puntaje optimista sin fundamento.
 
 ## 2. Informe narrativo (después del JSON)
 

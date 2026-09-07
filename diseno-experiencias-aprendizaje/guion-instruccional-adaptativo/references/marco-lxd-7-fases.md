@@ -1,6 +1,6 @@
 # Marco LXD — 7 fases para cursos adaptativos
 
-Este es el roadmap completo que Ángel usa para construir cursos adaptativos sobre
+Este es el roadmap completo usado para construir cursos adaptativos sobre
 Adapt Framework, con tracking xAPI y un middleware que llama a Claude
 (`middleware/src/claude.js`) para decidir en tiempo real qué bloque ve cada alumno.
 Cada fase tiene un gate ("Definition of Done") que impide avanzar a la siguiente sin

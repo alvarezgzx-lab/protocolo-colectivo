@@ -1,19 +1,21 @@
 ---
 name: evaluador-di-rubrica
-description: Evalúa módulos, cursos o secuencias didácticas de Diseño Instruccional (DI) usando una rúbrica de 20 criterios ponderados que integra Bloom, SOLO, Fink y Marzano, más criterios de microlecciones, instrumentos de evaluación, UX/atención, analítica y humanización de tono. Úsala siempre que Ángel pida evaluar, auditar, revisar, dar retroalimentación pedagógica, o darle una segunda opinión a un módulo/curso/secuencia didáctica propia o ajena — aunque no mencione la palabra "rúbrica" explícitamente. También aplica cuando pegue objetivos de aprendizaje, microlecciones, actividades o instrumentos de evaluación y pregunte si están bien diseñados, o cuando suba un PDF/DOCX/PPTX de un curso y pida una revisión de calidad pedagógica.
+description: Evalúa módulos, cursos o secuencias didácticas de Diseño Instruccional (DI) usando una rúbrica de 20 criterios ponderados que integra Bloom, SOLO, Fink y Marzano, más criterios de microlecciones, instrumentos de evaluación, UX/atención, analítica y humanización de tono. Úsala siempre que el usuario pida evaluar, auditar, revisar, dar retroalimentación pedagógica, o darle una segunda opinión a un módulo/curso/secuencia didáctica propia o ajena — aunque no mencione la palabra "rúbrica" explícitamente. También aplica cuando pegue objetivos de aprendizaje, microlecciones, actividades o instrumentos de evaluación y pregunte si están bien diseñados, o cuando suba un PDF/DOCX/PPTX de un curso y pida una revisión de calidad pedagógica.
 ---
 
 # Evaluador de rúbrica DI (multi-lente)
 
+> **Plantilla genérica.** Si ves marcadores `[PERSONALIZAR: ...]` en este archivo, la skill no ha sido personalizada todavía. Antes de aplicar sus reglas, sigue el protocolo de personalización en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio, o pregúntale directamente al usuario la información que falta.
+
 ## Por qué está diseñada así
 
-Esta skill viene de una rúbrica que Ángel diseñó originalmente para un equipo de agentes IA orquestados (ContentAgent, PedagogyAgent, AssessmentAgent, UXAgent, AnalyticsAgent, HumanizerAgent), cada uno mirando el módulo desde un ángulo distinto. En Claude.ai no hay subagentes que se puedan lanzar en paralelo, así que aquí las "6 fases" no son agentes separados sino **6 lentes secuenciales que tú aplicas dentro de una sola pasada de análisis**, tomando notas fase por fase antes de consolidar. El rigor de mirar el módulo desde 6 ángulos distintos es lo que hace que la evaluación no se quede solo en "¿está bien escrito?" — cubre desde la claridad de objetivos hasta si el instrumento de evaluación realmente mide lo que dice medir.
+Esta skill viene de una rúbrica diseñada originalmente para un equipo de agentes IA orquestados (ContentAgent, PedagogyAgent, AssessmentAgent, UXAgent, AnalyticsAgent, HumanizerAgent), cada uno mirando el módulo desde un ángulo distinto. En Claude.ai no hay subagentes que se puedan lanzar en paralelo, así que aquí las "6 fases" no son agentes separados sino **6 lentes secuenciales que tú aplicas dentro de una sola pasada de análisis**, tomando notas fase por fase antes de consolidar. El rigor de mirar el módulo desde 6 ángulos distintos es lo que hace que la evaluación no se quede solo en "¿está bien escrito?" — cubre desde la claridad de objetivos hasta si el instrumento de evaluación realmente mide lo que dice medir.
 
 ## Paso 0 — Reunir el paquete del módulo
 
 Antes de evaluar necesitas, en la medida de lo posible: objetivos de aprendizaje, microlecciones/actividades, materiales, instrumentos de evaluación (pruebas, rúbricas, listas de cotejo) y metadatos básicos (público objetivo, duración estimada).
 
-- **Si Ángel pega texto**, trabaja directamente sobre eso.
+- **Si el usuario pega texto**, trabaja directamente sobre eso.
 - **Si sube archivos** (PDF/DOCX/PPTX), usa la skill correspondiente (`pdf`, `pdf-reading`, `docx` o `pptx`) para extraer el contenido antes de empezar a evaluar — no adivines el contenido de un archivo que no has leído.
 - **Si falta algo crítico** para juzgar una fase completa (por ejemplo, no hay ningún instrumento de evaluación visible, así que la Fase 3 no se puede calificar con fundamento), dilo explícitamente y pregunta antes de inventar una calificación. Es mejor evaluar con menos fases pero honestamente, dejando claro qué falta, que rellenar huecos con suposiciones. Si el hueco es menor, evalúa igual y anótalo como limitación en la nota del criterio en vez de detener todo el proceso.
 
@@ -55,7 +57,7 @@ Usa esta tabla de pesos (ya normalizados, suman 1.0) para el cálculo:
 
 **Fórmula:** `puntaje_global = 100 × [Σ (puntaje_i/4 × peso_i)] / [Σ peso_i de los criterios evaluados]`.
 
-El denominador es intencional y no es solo por si falta algún criterio: si sumas los 20 pesos de la tabla de arriba, el total da 1.02 (no 1.00) — es un desajuste heredado del JSON original de Ángel, probablemente un error de redondeo al distribuir los pesos entre 20 criterios en vez de los ~19 que parece haber tenido en mente. Dividir entre la suma real de pesos usados corrige esto automáticamente sin tener que retocar los pesos individuales de cada criterio (que sí reflejan las prioridades relativas que definió: P1 con más peso que H2, por ejemplo). La misma división resuelve también el caso de fases incompletas: si algún criterio queda sin calificar por falta de evidencia (Paso 0), simplemente no entra en ninguna de las dos sumas — no hace falta un paso de renormalización aparte. Menciona en el resumen ejecutivo si el puntaje se calculó con menos de los 20 criterios.
+El denominador es intencional y no es solo por si falta algún criterio: si sumas los 20 pesos de la tabla de arriba, el total da 1.02 (no 1.00) — es un desajuste heredado del diseño original de la rúbrica, probablemente un error de redondeo al distribuir los pesos entre 20 criterios en vez de los ~19 que parece haber tenido en mente quien la diseñó. Dividir entre la suma real de pesos usados corrige esto automáticamente sin tener que retocar los pesos individuales de cada criterio (que sí reflejan las prioridades relativas del diseño original: P1 con más peso que H2, por ejemplo). La misma división resuelve también el caso de fases incompletas: si algún criterio queda sin calificar por falta de evidencia (Paso 0), simplemente no entra en ninguna de las dos sumas — no hace falta un paso de renormalización aparte. Menciona en el resumen ejecutivo si el puntaje se calculó con menos de los 20 criterios.
 
 **Umbrales:** <60 Insuficiente · 60-74 Aceptable · 75-89 Bueno · ≥90 Excelente.
 
@@ -66,8 +68,8 @@ El denominador es intencional y no es solo por si falta algún criterio: si suma
 
 ## Paso 4 — Generar la salida
 
-Lee `references/formato-salida.md` para el esquema JSON exacto y la plantilla del informe narrativo. Genera siempre ambos, JSON primero y narrativa después — el JSON es el registro estructurado por si Ángel quiere llevarlo a otro sistema; la narrativa es lo que realmente se lee.
+Lee `references/formato-salida.md` para el esquema JSON exacto y la plantilla del informe narrativo. Genera siempre ambos, JSON primero y narrativa después — el JSON es el registro estructurado por si el usuario quiere llevarlo a otro sistema; la narrativa es lo que realmente se lee.
 
 ## Antes de dar por cerrada la evaluación
 
-Presenta siempre las recomendaciones como propuestas para que Ángel las apruebe o ajuste — esta skill no debe presentarse como un veredicto final ni aplicar cambios automáticamente al contenido original. Si detectas que el módulo es de otra persona (un compañero, un curso ajeno que está auditando), mantén el tono constructivo: el objetivo es una segunda opinión experta, no una descalificación.
+Presenta siempre las recomendaciones como propuestas para que el usuario las apruebe o ajuste — esta skill no debe presentarse como un veredicto final ni aplicar cambios automáticamente al contenido original. Si detectas que el módulo es de otra persona (un compañero, un curso ajeno que está auditando), mantén el tono constructivo: el objetivo es una segunda opinión experta, no una descalificación.

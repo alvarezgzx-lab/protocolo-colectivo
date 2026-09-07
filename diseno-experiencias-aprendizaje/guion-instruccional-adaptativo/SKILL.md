@@ -1,13 +1,15 @@
 ---
 name: guion-instruccional-adaptativo
-description: Genera el guion instruccional completo (storyboard bloque por bloque) de un módulo o curso e-learning adaptativo, integrando el marco LXD de 7 fases para cursos adaptativos (Backward Design, checkpoints y rutas de decisión/nextBlockId, etapas de Merrill, diccionario xAPI, banco de evaluación, assets y checklist UDL por ruta) con los criterios del Agente eLearning Agéntico de Ángel (estándar CONOCER/EC1691, DUA, plan de abordaje en 3 opciones, máximo 3 preguntas estratégicas). Úsala siempre que Ángel pida escribir, diseñar o redactar un guion instruccional, storyboard, guion de curso, secuencia didáctica bloque por bloque, o cuando mencione checkpoints, rutas adaptativas, nextBlockId, branching, decisionEngine o Adapt Framework — aunque no diga la palabra "guion" explícitamente. También aplica cuando pida avanzar de fase dentro de un curso adaptativo ya iniciado (ej. "ya tengo los objetivos, ayúdame con el storyboard").
+description: Genera el guion instruccional completo (storyboard bloque por bloque) de un módulo o curso e-learning adaptativo, integrando el marco LXD de 7 fases para cursos adaptativos (Backward Design, checkpoints y rutas de decisión/nextBlockId, etapas de Merrill, diccionario xAPI, banco de evaluación, assets y checklist UDL por ruta) con los criterios de un Agente eLearning Agéntico (estándar CONOCER/EC1691, DUA, plan de abordaje en 3 opciones, máximo 3 preguntas estratégicas). Úsala siempre que el usuario pida escribir, diseñar o redactar un guion instruccional, storyboard, guion de curso, secuencia didáctica bloque por bloque, o cuando mencione checkpoints, rutas adaptativas, nextBlockId, branching, decisionEngine o Adapt Framework — aunque no diga la palabra "guion" explícitamente. También aplica cuando pida avanzar de fase dentro de un curso adaptativo ya iniciado (ej. "ya tengo los objetivos, ayúdame con el storyboard").
 ---
 
 # Guion instruccional para cursos adaptativos
 
+> **Plantilla genérica.** Si ves marcadores `[PERSONALIZAR: ...]` en este archivo, la skill no ha sido personalizada todavía. Antes de aplicar sus reglas, sigue el protocolo de personalización en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio, o pregúntale directamente al usuario la información que falta.
+
 ## Por qué está diseñada así
 
-Esta skill nace de cruzar dos documentos de Ángel: el system prompt de su "Agente eLearning Agéntico" (el marco general de diseño instruccional — CONOCER, DUA, plan de abordaje, rúbricas) y el roadmap de LXD de 7 fases que usa específicamente para construir **cursos adaptativos** sobre Adapt Framework, con xAPI y un middleware que llama a Claude para decidir, en tiempo real, qué bloque (`nextBlockId`) ve cada alumno según su historial.
+Esta skill nace de cruzar dos marcos `[PERSONALIZAR: nombra la fuente/equipo/proyecto del que vienen, si aplica]`: el system prompt de un "Agente eLearning Agéntico" (el marco general de diseño instruccional — CONOCER, DUA, plan de abordaje, rúbricas) y el roadmap de LXD de 7 fases usado específicamente para construir **cursos adaptativos** sobre Adapt Framework, con xAPI y un middleware que llama a Claude para decidir, en tiempo real, qué bloque (`nextBlockId`) ve cada alumno según su historial.
 
 Un guion instruccional para este tipo de curso no es solo "el texto que lee el alumno" — es el documento que además define qué bloques existen, a qué ruta pertenecen, cómo se trackean y cómo se evalúan, porque todo eso se traduce directamente en código (`course.json` de Adapt, `middleware/src/claude.js`, el diccionario de verbos xAPI). Un guion incompleto o con IDs inconsistentes no es solo un problema pedagógico: rompe el sistema de branching en producción.
 
@@ -15,13 +17,13 @@ Por eso esta skill no salta directo a "escribir el guion" — sigue las fases en
 
 ## Paso 0 — Aclarar el alcance antes de empezar
 
-Haz como máximo 3 preguntas estratégicas (igual que el Agente eLearning — después de eso, avanza con supuestos documentados en vez de seguir preguntando):
+Haz como máximo 3 preguntas estratégicas (igual que el Agente eLearning de referencia — después de eso, avanza con supuestos documentados en vez de seguir preguntando):
 
 1. **¿El curso es adaptativo (con branching/`nextBlockId`) o lineal?** Si es lineal, la Fase 2 (checkpoints), la columna de rutas en el storyboard y el checklist UDL por ruta no aplican — simplifica todo a una sola ruta `default`. No asumas branching solo porque la skill se llama "adaptativo".
 2. **¿Ya existe un glosario de IDs (`checkpointId`/`blockId`) o un `course.json` previo?** Si existe, pide que lo comparta o lo pegue — nunca inventes IDs nuevos que puedan chocar con los ya usados en Adapt, `decisionEngine.js` o `middleware/src/claude.js`. Si no existe, créalo desde cero con `assets/plantilla-glosario-ids.json`.
 3. **¿Hay un estándar de competencia formal (CONOCER/EC1691 u otro) al que alinear el curso?** Si sí, aplica además los criterios de `references/criterios-agente-elearning.md` (declaratoria de uso de IAGen, ficha descriptiva, etc.). Si no, trabaja solo con el marco pedagógico (Bloom, DUA, Merrill).
 
-Si Ángel ya respondió esto en su mensaje o en archivos adjuntos, no repitas las preguntas — confirma tu interpretación en una línea y avanza.
+Si el usuario ya respondió esto en su mensaje o en archivos adjuntos, no repitas las preguntas — confirma tu interpretación en una línea y avanza.
 
 ## Paso 1 — Fase 1: objetivos con Backward Design
 
@@ -31,7 +33,7 @@ Antes de escribir una sola línea de guion, resuelve (Wiggins & McTighe: primero
 - Objetivos de aprendizaje: **verbo medible + condición + criterio** (Bloom revisado: recordar, comprender, aplicar, analizar, evaluar, crear — nunca "entender" o "conocer", no son observables).
 - Mapa de evidencia: para cada objetivo, qué comportamiento observable lo demuestra y cómo se captura (qué interacción de Adapt produce qué statement xAPI).
 
-**No avances a la Fase 2 sin esto resuelto.** Si Ángel no tiene esta información completa, no te quedes pidiéndola indefinidamente — propón un borrador razonable basado en el título/descripción del curso y márcalo explícitamente como supuesto a validar.
+**No avances a la Fase 2 sin esto resuelto.** Si el usuario no tiene esta información completa, no te quedes pidiéndola indefinidamente — propón un borrador razonable basado en el título/descripción del curso y márcalo explícitamente como supuesto a validar.
 
 ## Paso 2 — Fase 2: checkpoints y rutas de decisión (solo si el curso es adaptativo)
 
@@ -80,7 +82,7 @@ Entrega en este orden:
 1. **Guion instruccional** completo (Markdown, tabla de la Fase 3) — el documento principal.
 2. **JSON de checkpoints actualizado** (si el curso es adaptativo) — listo para que desarrollo lo traduzca al system prompt del middleware.
 3. **Tabla de trazabilidad**: actividad → objetivo → checkpoint/estándar → criterio de evaluación. Es la prueba de que nada quedó suelto.
-4. **Supuestos documentados**: cualquier decisión que tomaste sin confirmación explícita de Ángel, para que las valide antes de pasar a producción.
+4. **Supuestos documentados**: cualquier decisión que tomaste sin confirmación explícita del usuario, para que las valide antes de pasar a producción.
 5. Si aplica un estándar CONOCER/EC1691, incluye la declaratoria de uso de IAGen (ver `references/criterios-agente-elearning.md`).
 
 No generes archivos binarios ni recursos finales protegidos por copyright sin permiso — el entregable de esta skill es el diseño y el guion, no el empaquetado técnico final para producción.

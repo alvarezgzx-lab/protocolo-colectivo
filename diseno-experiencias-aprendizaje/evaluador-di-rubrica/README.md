@@ -34,5 +34,6 @@ Cuando pides evaluar, auditar, revisar, dar retroalimentación pedagógica, o un
 ## Cómo instalarla
 
 1. Copia esta carpeta completa (`SKILL.md`, `references/`) a tu directorio de skills de Claude.
-2. Si vas a evaluar archivos (PDF/DOCX/PPTX) en vez de texto pegado, asegúrate de tener disponibles las skills de lectura de documentos correspondientes (`pdf`, `docx`, `pptx`) — `evaluador-di-rubrica` las invoca para extraer contenido antes de evaluar.
-3. Opcional: si quieres que la Fase 6 (humanización de tono) use la skill dedicada `humanizar-texto-es` sobre documentos largos, instálala también; si no está disponible, la skill genera las variantes de tono directamente.
+2. Es una plantilla genérica sin datos personales embebidos, lista para usar tal cual. Si quieres ajustar la tabla de pesos o algún criterio a tu propio contexto de evaluación, el protocolo en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio también sirve para eso.
+3. Si vas a evaluar archivos (PDF/DOCX/PPTX) en vez de texto pegado, asegúrate de tener disponibles las skills de lectura de documentos correspondientes (`pdf`, `docx`, `pptx`) — `evaluador-di-rubrica` las invoca para extraer contenido antes de evaluar.
+4. Opcional: si quieres que la Fase 6 (humanización de tono) use la skill dedicada `humanizar-texto-es` sobre documentos largos, instálala también; si no está disponible, la skill genera las variantes de tono directamente.

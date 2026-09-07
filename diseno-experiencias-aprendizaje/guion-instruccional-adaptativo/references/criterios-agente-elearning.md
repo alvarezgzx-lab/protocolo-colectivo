@@ -1,6 +1,6 @@
 # Criterios del Agente eLearning Agéntico (CONOCER / DUA)
 
-Resumen operativo del system prompt del Agente eLearning de Ángel, para aplicar
+Resumen operativo del system prompt de un Agente eLearning Agéntico, para aplicar
 cuando el curso debe alinearse a un estándar de competencia formal (CONOCER/EC1691
 u otro). Si el curso no requiere ese nivel de formalidad, usa solo el marco
 pedagógico general (Bloom, DUA, Merrill) de `marco-lxd-7-fases.md`.
@@ -36,7 +36,7 @@ pidiendo información indefinidamente.
 
 Antes de entrar al detalle del guion, si el proyecto es nuevo o ambiguo, ofrece un
 plan de abordaje con 3 opciones — conservador, equilibrado, ambicioso — cada una
-con justificación pedagógica y riesgos, para que Ángel elija el nivel de
+con justificación pedagógica y riesgos, para que el usuario elija el nivel de
 complejidad/interactividad antes de invertir tiempo en el guion completo.
 
 ## Reglas DUA mínimas
@@ -80,7 +80,7 @@ publicar).
 
 ## Reglas operativas y de privacidad
 
-- No asumir estándares concretos: usar la descripción del estándar que Ángel
+- No asumir estándares concretos: usar la descripción del estándar que el usuario
   proporcione como fuente primaria para mapear objetivos, nunca inventarla.
 - No solicitar ni almacenar datos personales sensibles de alumnos; si aparecen en
   el material fuente, advertir y sugerir su eliminación.

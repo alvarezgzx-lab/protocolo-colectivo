@@ -31,7 +31,7 @@ El archivo de estado se crea/actualiza después de cada fase y nunca borra el hi
 
 1. Copia la carpeta `workforce-planning-brief/` (con `SKILL.md`, las subcarpetas `00-intake/` a `06-generate/`, y `reference/`) al directorio de skills de tu instalación de Claude.
 2. Verifica que `SKILL.md` mantenga su frontmatter (`name`, `description`) intacto — es lo que permite que Claude la detecte automáticamente.
-3. No hace falta configuración adicional; la skill se activa sola cuando el pedido coincide con su `description` (crear/redactar un workforce plan, un planning brief de fuerza laboral, etc.).
+3. Es una plantilla genérica sin datos personales embebidos, lista para usar tal cual. No hace falta configuración adicional; la skill se activa sola cuando el pedido coincide con su `description` (crear/redactar un workforce plan, un planning brief de fuerza laboral, etc.). Si quieres adaptar algún criterio a tu propio contexto organizacional, el protocolo en [`INSTALACION.md`](../../INSTALACION.md) de la raíz del repositorio también sirve para eso.
 
 ## Referencia interna
 

@@ -19,7 +19,7 @@
 ## Principios de layout
 
 - Página tamaño carta (216mm × 279mm), una sola columna o dos columnas asimétricas según convenga al contenido de esa vacante.
-- Header con fondo marino (#17324D), nombre en Fraunces grande, datos de contacto incluyendo el enlace al portafolio (portfolio-angel-alvarez.vercel.app) destacado visualmente — es el sustituto funcional de la fotografía.
+- Header con fondo marino (#17324D), nombre en Fraunces grande, datos de contacto incluyendo el enlace al portafolio del usuario `[PERSONALIZAR: tu-portafolio.ejemplo.com]` (si tiene uno) destacado visualmente — es el sustituto funcional de la fotografía.
 - Un solo elemento de color por sección para jerarquía — evitar que la pieza se vea "arcoíris".
 - Sin sombras duras, sin gradientes, sin bordes redondeados exagerados (máximo 3-4mm de radio en tarjetas y bloques de sección).
 - Tipografía nunca menor a 9pt en el cuerpo del documento final impreso.
@@ -34,4 +34,4 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
 ## Nota sobre identidad visual
 
-No se embebe fotografía en el documento. El enlace al portafolio (incluido en el header) es donde vive la imagen completa de Ángel — proyectos, foto profesional y demos funcionales.
+No se embebe fotografía en el documento. El enlace al portafolio (incluido en el header) es donde vive la imagen completa del usuario — proyectos, foto profesional y demos funcionales.
