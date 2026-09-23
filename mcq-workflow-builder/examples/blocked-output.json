@@ -1,0 +1,120 @@
+{
+  "status": "manual_review",
+  "mcq_responses": {
+    "Q1": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q2": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q3": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q4": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q5": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q6": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q7": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q8": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q9": {
+      "choice": "A",
+      "literal_response": "A",
+      "confidence": "high"
+    },
+    "Q10": {
+      "choice": "C",
+      "literal_response": "C",
+      "confidence": "high"
+    }
+  },
+  "verification_summary": {
+    "gates": [
+      {
+        "gate": "Policy",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "Q10 C contradice atribución obligatoria."
+      }
+    ],
+    "overall": "FAIL"
+  },
+  "workflows": [],
+  "retrieval_provenance": {
+    "mode": "not_run",
+    "adapter_id": null,
+    "retrieval_queries": [],
+    "results": [],
+    "index_version": null,
+    "ranking_version": "rrf-60-v1"
+  },
+  "validation_flags": [
+    {
+      "gate": "Policy",
+      "status": "FAIL",
+      "critical": true,
+      "reason": "Q10 C contradice atribución obligatoria."
+    }
+  ],
+  "manual_review_report": {
+    "failed_gates": [
+      "Policy"
+    ],
+    "unsupported_sentences": [],
+    "provenance": {
+      "mode": "not_run",
+      "adapter_id": null,
+      "retrieval_queries": [],
+      "results": [],
+      "index_version": null,
+      "ranking_version": "rrf-60-v1"
+    },
+    "suggested_fixes": [
+      "Elegir Q10 A o B, mostrar resumen y confirmar de nuevo."
+    ],
+    "retry_from": "interview"
+  },
+  "confidence_note": [
+    "Ejemplo sintético sin recuperación de fuentes.",
+    "No se generaron workflows ejecutables.",
+    "Resolver el conflicto y reconfirmar antes de continuar."
+  ],
+  "manual_review_template": {
+    "unsupported_sentences": [],
+    "provenance": {
+      "mode": "not_run",
+      "adapter_id": null,
+      "retrieval_queries": [],
+      "results": [],
+      "index_version": null,
+      "ranking_version": "rrf-60-v1"
+    },
+    "suggested_fixes": []
+  },
+  "self_critique": [],
+  "record_kind": "synthetic_fixture"
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "Q1",
+    "text": "Propósito principal:",
+    "options": {
+      "A": "Contenido creativo.",
+      "B": "Resumen / toma de notas.",
+      "C": "Análisis de datos / métricas.",
+      "D": "Generación de código / scripts.",
+      "E": "Otro (texto libre)."
+    }
+  },
+  {
+    "id": "Q2",
+    "text": "Audiencia objetivo:",
+    "options": {
+      "A": "Público general.",
+      "B": "Equipo técnico.",
+      "C": "Ejecutivos.",
+      "D": "Estudiantes/formadores.",
+      "E": "Otro (texto libre)."
+    }
+  },
+  {
+    "id": "Q3",
+    "text": "Nivel de verificación requerido:",
+    "options": {
+      "A": "Alta — 2 fuentes verificadas (1 internacional + 1 local si aplica).",
+      "B": "Media — 1 fuente verificada.",
+      "C": "Baja — permitir inferencias etiquetadas.",
+      "D": "No sé — sugerir."
+    }
+  },
+  {
+    "id": "Q4",
+    "text": "Incluir fuentes locales (ej. mexicanas)?",
+    "options": {
+      "A": "Sí, priorizar.",
+      "B": "Sí, si disponibles.",
+      "C": "No.",
+      "D": "Indiferente."
+    }
+  },
+  {
+    "id": "Q5",
+    "text": "Formato de salida preferido:",
+    "options": {
+      "A": "Workflow JSON (pasos, entradas, salidas, validaciones, triggers).",
+      "B": "Prompt JSON para LLM + workflow wrapper.",
+      "C": "Prompt JSON + tests unitarios.",
+      "D": "Otro (texto libre)."
+    }
+  },
+  {
+    "id": "Q6",
+    "text": "Nivel de detalle del workflow:",
+    "options": {
+      "A": "Muy detallado (paso a paso, validaciones, ejemplos, reglas de rechazo).",
+      "B": "Moderado (pasos claros, 1 ejemplo).",
+      "C": "Minimal (esqueleto reproducible)."
+    }
+  },
+  {
+    "id": "Q7",
+    "text": "Deseas que la skill genere:",
+    "options": {
+      "A": "Queries de búsqueda optimizadas.",
+      "B": "Esquema MCP (Zod/JSON Schema).",
+      "C": "Reglas de atribución y metadatos.",
+      "D": "Todas las anteriores.",
+      "E": "Ninguna."
+    }
+  },
+  {
+    "id": "Q8",
+    "text": "Permitir búsquedas web para RAG?",
+    "options": {
+      "A": "Sí, fuentes públicas autorizadas.",
+      "B": "Sí, solo dominios académicos/gubernamentales.",
+      "C": "No (offline)."
+    }
+  },
+  {
+    "id": "Q9",
+    "text": "Etiquetado profesional automático (roles)?",
+    "options": {
+      "A": "Sí, automático.",
+      "B": "Sí, solo si solicitado.",
+      "C": "No."
+    }
+  },
+  {
+    "id": "Q10",
+    "text": "Tolerancia a hallazgos no verificables:",
+    "options": {
+      "A": "Rechazar y pedir más info.",
+      "B": "Incluir como `inference` con explicación.",
+      "C": "Incluir sin marca."
+    }
+  }
+]

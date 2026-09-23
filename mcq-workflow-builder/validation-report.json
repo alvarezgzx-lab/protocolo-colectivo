@@ -1,0 +1,157 @@
+{
+  "results": [
+    {
+      "name": "positive: confirmed offline pipeline and custom runner",
+      "status": "PASS"
+    },
+    {
+      "name": "incomplete MCQ prevents retrieval and generation",
+      "status": "PASS"
+    },
+    {
+      "name": "No blocks; editable answers require new Yes",
+      "status": "PASS"
+    },
+    {
+      "name": "stale summary and changed instruction invalidate confirmation",
+      "status": "PASS"
+    },
+    {
+      "name": "Q10 C blocks unmarked inference",
+      "status": "PASS"
+    },
+    {
+      "name": "Q3 D requires explicit resolution",
+      "status": "PASS"
+    },
+    {
+      "name": "missing schema field stops preprocessor",
+      "status": "PASS"
+    },
+    {
+      "name": "token overflow prevents retrieval",
+      "status": "PASS"
+    },
+    {
+      "name": "offline rejects online connector",
+      "status": "PASS"
+    },
+    {
+      "name": "high verification fails with one distinct source",
+      "status": "PASS"
+    },
+    {
+      "name": "high verification requires applicable local source",
+      "status": "PASS"
+    },
+    {
+      "name": "Q8 academic excludes vendor docs",
+      "status": "PASS"
+    },
+    {
+      "name": "untrusted sources do not count",
+      "status": "PASS"
+    },
+    {
+      "name": "old sources require verified recent review",
+      "status": "PASS"
+    },
+    {
+      "name": "invented citation blocks attribution",
+      "status": "PASS"
+    },
+    {
+      "name": "post-generation QA catches new unsupported claim",
+      "status": "PASS"
+    },
+    {
+      "name": "low verification permits explicitly labelled inference",
+      "status": "PASS"
+    },
+    {
+      "name": "high privacy risk requires manual review",
+      "status": "PASS"
+    },
+    {
+      "name": "critical self-critique cannot be ignored",
+      "status": "PASS"
+    },
+    {
+      "name": "Q5 C supplies positive and negative workflow tests",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown handler fails before execution",
+      "status": "PASS"
+    },
+    {
+      "name": "forward references fail compilation",
+      "status": "PASS"
+    },
+    {
+      "name": "retry must be idempotent",
+      "status": "PASS"
+    },
+    {
+      "name": "bounded transient retry succeeds",
+      "status": "PASS"
+    },
+    {
+      "name": "permanent failure is not retried",
+      "status": "PASS"
+    },
+    {
+      "name": "tampered package rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "synthetic sources cannot pass production mode",
+      "status": "PASS"
+    },
+    {
+      "name": "output schema forbids workflow in manual review",
+      "status": "PASS"
+    },
+    {
+      "name": "runtime QA withholds failed output",
+      "status": "PASS"
+    },
+    {
+      "name": "adapter exception produces manual review",
+      "status": "PASS"
+    },
+    {
+      "name": "same run_id cannot be reused with changed payload",
+      "status": "PASS"
+    },
+    {
+      "name": "Other requires literal free text",
+      "status": "PASS"
+    },
+    {
+      "name": "audit failure cannot issue ready packet",
+      "status": "PASS"
+    },
+    {
+      "name": "handler timeout does not retry uncertain effects",
+      "status": "PASS"
+    },
+    {
+      "name": "ready output cannot carry failed critical gates",
+      "status": "PASS"
+    }
+  ],
+  "passed": 35,
+  "failed": 0,
+  "environment": "JavaScript V8 via functions.exec; no Node CLI",
+  "retrieval": "synthetic fixtures only; no live retrieval",
+  "mcp_bridge_smoke": "PASS: missing authenticated session blocked",
+  "unverified": [
+    "Node CLI / timers / AbortController in host environment",
+    "Real MCP server transport",
+    "Real source retrieval, LLM and semantic QA",
+    "Distributed orchestration and durable storage"
+  ],
+  "skill_validation": "Frontmatter/name/description manually checked against quick_validate.py requirements; Python validator unavailable",
+  "date": "2026-09-23"
+}

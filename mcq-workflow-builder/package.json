@@ -1,0 +1,12 @@
+{
+  "name": "mcq-workflow-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Blocking MCQ workflow skill and reference runtime",
+  "scripts": {
+    "test": "node tests/runtime.test.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

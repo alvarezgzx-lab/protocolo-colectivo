@@ -1,0 +1,40 @@
+{
+  "record_kind": "synthetic_fixture",
+  "description": "Solo prueba; no constituye autorización real",
+  "interview_fixture": {
+    "choices": {
+      "Q1": "B",
+      "Q2": "B",
+      "Q3": "A",
+      "Q4": "A",
+      "Q5": "C",
+      "Q6": "B",
+      "Q7": "D",
+      "Q8": "C",
+      "Q9": "C",
+      "Q10": "A"
+    },
+    "confirmation": "Yes"
+  },
+  "cases": [
+    {
+      "kind": "positive",
+      "input": {
+        "text": "hola"
+      },
+      "expected": {
+        "text": "HOLA"
+      }
+    },
+    {
+      "kind": "negative",
+      "input": {
+        "text": 42
+      },
+      "expected": {
+        "gate": "Schema",
+        "handler_called": false
+      }
+    }
+  ]
+}
